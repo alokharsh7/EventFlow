@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 240 33% 95%;
+
+    --card: 240 18% 8%;
+    --card-foreground: 240 33% 95%;
+
+    --popover: 240 16% 12%;
+    --popover-foreground: 240 33% 95%;
+
+    --primary: 245 100% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 16% 12%;
+    --secondary-foreground: 240 33% 95%;
+
+    --muted: 240 15% 19%;
+    --muted-foreground: 240 14% 61%;
+
+    --accent: 245 100% 69%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 352 100% 68%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 162 72% 48%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 36 91% 55%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 199 93% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 240 15% 19%;
+    --input: 240 15% 19%;
+    --ring: 245 100% 69%;
+
+    --radius: 0.625rem;
+
+    --bg-elevated: 240 16% 12%;
+    --border-glow: 245 100% 69%;
+    --accent-bright: 245 100% 76%;
+
+    --sidebar-background: 240 18% 8%;
+    --sidebar-foreground: 240 33% 95%;
+    --sidebar-primary: 245 100% 69%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 16% 12%;
+    --sidebar-accent-foreground: 240 33% 95%;
+    --sidebar-border: 240 15% 19%;
+    --sidebar-ring: 245 100% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Clash Display', sans-serif;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(240 18% 8%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(240 15% 19%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(245 100% 69%);
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, hsl(240 18% 8%) 25%, hsl(240 16% 14%) 50%, hsl(240 18% 8%) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius);
+}
